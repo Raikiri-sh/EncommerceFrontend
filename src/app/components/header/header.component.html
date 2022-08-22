@@ -1,0 +1,26 @@
+<mat-toolbar color="primary">
+  <span routerLink="/"> E-COMMERCE </span>
+
+  <button *ngIf="userService.roleMatch(['Admin'])" >
+  Admin Dashboard
+  </button>
+  <button *ngIf="userService.roleMatch(['User'])" >
+    User History
+  </button>
+  <span class="spacer">  </span>
+
+  <button mat-button [matMenuTriggerFor]="menu">Login</button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item routerLink="/admin">Admin</button>
+    <button mat-menu-item routerLink="/user">User</button>
+    <button mat-menu-item routerLink="/merchant">Merchant</button>
+  </mat-menu>
+
+<!--  <button *ngIf="!isLoggedIn" (click)="logout()" mat-icon-button aria-label="login">-->
+<!--    Merchant-->
+<!--  </button>-->
+
+<!--  <button *ngIf="isLoggedIn" (click)="logout()" mat-icon-button aria-label="login">-->
+<!--   User-->
+<!--  </button>-->
+</mat-toolbar>
