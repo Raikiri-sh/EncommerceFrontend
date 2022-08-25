@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
-import { Router, RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -17,6 +17,8 @@ import { MerchantComponent } from './components/merchant/merchant.component';
 import {UserService} from "./services/user.service";
 import {AuthInterceptor} from "./auth/auth.interceptor";
 import {AuthGuard} from "./auth/auth.guard";
+import {ProductItemComponent} from "./components/home/product-item/product-item.component";
+import {MatPaginatorModule} from "@angular/material/paginator";
 // Routing paths
 const routes: Routes = [
 
@@ -33,7 +35,7 @@ const routes: Routes = [
     UserComponent,
     AdminComponent,
     MerchantComponent,
-
+    ProductItemComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
@@ -42,7 +44,8 @@ const routes: Routes = [
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    MaterialModule
+    MaterialModule,
+    MatPaginatorModule
   ],
   providers: [
     AuthGuard,  UserService,

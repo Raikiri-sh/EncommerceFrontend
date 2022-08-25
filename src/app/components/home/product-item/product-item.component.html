@@ -1,0 +1,20 @@
+<div class="cardentry">
+    <img class="image-field" height="100px"width="100px" src="https://cdn.shopify.com/s/files/1/2718/4356/products/nike-dunk-low-retro-white-black-white-dd1391-100-sneaker_c843cffb-6250-4017-9fcc-6f847d770b67_600x.jpg?v=1660758125">
+  <div class="card-body">
+   <p class="nametext"><strong>{{productItem.name}}</strong></p>
+    <p class="nametext" ><strong>Stocks:{{productItem.unitsInStock}}</strong><br></p>
+    <p class="nametext"><br> <strong>MerchantName:{{productItem.merchantName}}</strong></p>
+    <p class="card-text">
+     {{productItem.unitPrice| currency: 'NPR'}}
+    </p>
+    <ng-container *ngIf="visible">
+      <p class="card-description" >{{productItem.description}}</p>
+    </ng-container>
+  </div>
+  <div class="d-flex justify-content-between align-items-center">
+    <div class="btn-group">
+      <button type="button" class="buy" (click)="stockDecrease(productItem)">Buy</button>
+      <button  type="button" class="Viewdetails " (click)="goToItemDetails(productItem)">{{ViewDetails?" View Details":"Hide Details"}}</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+mat-card {
+    max-width: 400px;
+    margin: 5px;
+  }
+  
+  .card-container {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .special {
+    color: deeppink;
+  }
+  
+  .not-special {
+    color: blue;
+  }
+  
+
+  .delete-item {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+  

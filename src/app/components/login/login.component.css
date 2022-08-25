@@ -1,0 +1,7 @@
+.keepinCentered {
+  height: 200px;
+  background: #CCCCCC;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -6,6 +6,7 @@ import {LoginComponent} from "./components/login/login.component";
 import {AdminComponent} from "./components/admin/admin.component";
 import {UserComponent} from "./components/user/user.component";
 import {MerchantComponent} from "./components/merchant/merchant.component";
+import {AuthGuard} from "./auth/auth.guard";
 
 
 
@@ -18,8 +19,8 @@ const routes: Routes = [
    { path: 'login', component: LoginComponent },
 
 
-  { path: 'admin', component: AdminComponent, data:{roles:['Admin']} },
-  { path: 'user', component: UserComponent ,   data:{roles:['User']} },
+  { path: 'admin', component: AdminComponent,data:{roles:['Admin']} },
+  { path: 'user', component: UserComponent , canActivate:[AuthGuard],  data:{roles:['User']} },
   { path: 'merchant', component: MerchantComponent ,  data:{roles:['Merchant']} },
   { path: '**', redirectTo: '/heroes', pathMatch: 'full' },
 

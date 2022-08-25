@@ -21,6 +21,7 @@ export class UserService {
   }
 
   public forUser() {
+    // Doing get request at http://localhost:9090/user
     return this.httpclient.get(this.PATH_OF_API + '/user', {
       responseType: 'text',
     });
@@ -28,6 +29,7 @@ export class UserService {
 
 
   public forAdmin() {
+    // Doing get request at http://localhost:9090/admin
     return this.httpclient.get(this.PATH_OF_API + '/admin', {
       responseType: 'text',
     });
